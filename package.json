@@ -1,0 +1,40 @@
+{
+  "name": "@mytools-all/mytools-color",
+  "version": "0.1.0",
+  "description": "颜色助手：HEX / RGB / HSL 互转、色板与对比度检查。",
+  "type": "module",
+  "main": "index.html",
+  "license": "MIT",
+  "author": "MyTools Contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mytools-all/mytools-color.git"
+  },
+  "homepage": "https://github.com/mytools-all/mytools-color#readme",
+  "bugs": {
+    "url": "https://github.com/mytools-all/mytools-color/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "plugin.json",
+    "*.html",
+    "*.css",
+    "*.svg",
+    "*.png",
+    "vendor/",
+    "LICENSE",
+    "THIRD_PARTY.md",
+    "README.md",
+    "app.mjs",
+    "common.mjs",
+    "utils.mjs",
+    "*.js",
+    "*.LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test"
+  }
+}

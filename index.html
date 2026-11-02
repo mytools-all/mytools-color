@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>颜色助手</title>
+    <link rel="stylesheet" href="tool.css" />
+    <style>
+      #swatch {
+        height: 130px;
+        border-radius: 7px;
+        background: #409eff;
+      }
+      .swatches {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .swatches button {
+        height: 45px;
+        min-width: 90px;
+      }
+      .scheme {
+        display: flex;
+      }
+      .scheme button {
+        flex: 1;
+        height: 72px;
+        border: 0;
+        border-radius: 0;
+      }
+      #contrast-preview {
+        font-size: 26px;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="toolbar">
+        <strong>颜色助手</strong>
+        <div class="tabs" id="tabs">
+          <button class="active" data-tab="convert">颜色转换</button
+          ><button data-tab="palette">配色方案</button
+          ><button data-tab="contrast">对比度</button>
+        </div>
+        <span class="spacer"></span><button id="theme">◐</button>
+      </div>
+      <div class="content stack">
+        <section id="convert" class="stack">
+          <div id="swatch"></div>
+          <div class="row">
+            <input type="color" id="picker" value="#409eff" /><input
+              id="hex"
+              value="#409EFF"
+              aria-label="HEX"
+            /><button id="copy">复制 HEX</button
+            ><button id="screen">屏幕取色</button
+            ><button id="favorite">＋ 收藏</button>
+          </div>
+          <label
+            >RGB <input id="rgb" value="64, 158, 255" style="flex: 1" /></label
+          ><label>HSL <input id="hsl" style="flex: 1" /></label>
+          <div id="favorites" class="swatches"></div>
+        </section>
+        <section id="palette" class="hidden stack">
+          <label>基色 <input id="base" type="color" value="#409eff" /></label>
+          <div id="schemes" class="stack"></div>
+        </section>
+        <section id="contrast" class="hidden stack">
+          <div class="row">
+            <label>前景 <input id="fg" type="color" value="#333333" /></label
+            ><label>背景 <input id="bg" type="color" value="#ffffff" /></label>
+          </div>
+          <div id="contrast-preview" class="panel">
+            Aa 中文字体预览 The quick brown fox
+          </div>
+          <strong id="ratio"></strong><span id="wcag"></span>
+        </section>
+      </div>
+      <footer id="status" class="status" role="status"></footer>
+    </main>
+    <script type="module" src="app.mjs"></script>
+  </body>
+</html>

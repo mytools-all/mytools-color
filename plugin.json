@@ -1,0 +1,25 @@
+{
+  "name": "mytools-color",
+  "description": "颜色助手：HEX / RGB / HSL 互转、色板与对比度检查。",
+  "version": "0.1.0",
+  "apiVersion": 1,
+  "main": "index.html",
+  "capabilities": [
+    "clipboard.write",
+    "storage.get",
+    "storage.set"
+  ],
+  "features": [
+    {
+      "code": "color",
+      "explain": "打开颜色助手",
+      "cmds": [
+        "颜色",
+        "颜色助手",
+        "配色",
+        "color"
+      ]
+    }
+  ],
+  "pluginName": "颜色助手"
+}
