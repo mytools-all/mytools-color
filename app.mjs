@@ -8,6 +8,7 @@ import {
   call,
   escapeHtml,
 } from "./common.mjs";
+import { pickScreenColor } from "./screen-color.mjs";
 let current = "#409EFF",
   favorites = [];
 function rgb(hex) {
@@ -141,13 +142,13 @@ $("#favorite").onclick = action(async () => {
   status("已收藏颜色");
 });
 $("#screen").onclick = action(async () => {
-  if (!window.EyeDropper)
-    throw Error("此 WebView 不支持屏幕取色，请使用屏幕取色器工具");
+  $("#screen").disabled = true;
   try {
-    update((await new EyeDropper().open()).sRGBHex);
-  } catch (e) {
-    if (e.name !== "AbortError") throw e;
-    status("已取消取色");
+    const result = await pickScreenColor({ call, status });
+    if (result) update(result.hex);
+    else status("已取消取色");
+  } finally {
+    $("#screen").disabled = false;
   }
 });
 function palettes() {
