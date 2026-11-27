@@ -1,6 +1,6 @@
 {
   "name": "@mytools-all/mytools-color",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "颜色助手：HEX / RGB / HSL 互转、色板与对比度检查。",
   "type": "module",
   "main": "index.html",
@@ -40,5 +40,8 @@
   },
   "devDependencies": {
     "happy-dom": "21.0.4"
+  },
+  "engines": {
+    "mytools": ">=0.2.0 <0.3.0"
   }
 }
